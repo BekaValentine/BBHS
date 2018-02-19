@@ -79,3 +79,6 @@ prettyFinal m = show (m :: Term)
 
 evalFinal :: FinalTerm -> Int
 evalFinal m = runReader (m :: Reader Env Int) []
+
+scopeCheckFinal :: FinalTerm -> Bool
+scopeCheckFinal m = runReader (m :: Reader Context Bool) []
